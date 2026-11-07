@@ -1,0 +1,37 @@
+# Copy this into your game folder as porter.toml. Every line is optional.
+
+name = "My Game"                 # pack name shown in Tabletop Club
+author = "Scanned from my own copy"
+auto_crop = true                 # crop + straighten photos taken on a table
+
+[board]
+image = "board.jpg"              # default: any picture named board.*
+width_cm = 50                    # measure the real board; height follows the photo
+thickness_cm = 0.4
+
+# A deck from a folder: cards/Events/*.jpg plus cards/Events/back.jpg
+# (folders under cards/ are found on their own; list them here to set sizes)
+[[decks]]
+name = "Events"
+width_cm = 6.35                  # poker size; leave out to keep the photo's shape
+height_cm = 8.89
+
+# A deck from a sheet: a scan or print-and-play page with a grid of cards
+[[decks]]
+name = "Laws"
+sheet = "sheets/laws.png"
+rows = 3
+cols = 3
+count = 8                        # stop early if the last row is not full
+margin = 0.0                     # fraction of the page to skip around the edge
+back = "sheets/laws-back.png"
+names = ["Tax", "Draft", "Curfew"]   # optional card names, in reading order
+
+[tokens.round]                   # tokens/round/*  -> poker-chip style tokens
+size_cm = 2.5
+thickness_cm = 0.3
+
+[tokens.square]                  # tokens/square/* -> flat square tiles
+size_cm = 2.5
+thickness_cm = 0.3
+# Two-sided tokens: put the back picture in backs/ with the same file name.

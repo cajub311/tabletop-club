@@ -23,3 +23,8 @@ game/addons/webrtc_native/
 
 # Python ignores
 env/
+
+# Board Game Porter: keep personal game photos and packs out of git
+my-games/
+_pack/
+__pycache__/
